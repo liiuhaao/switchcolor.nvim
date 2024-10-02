@@ -45,7 +45,7 @@ function M.save_color(config)
     local file = io.open(config.file_path, 'w')
     if file then
         local content_table = {
-            string.format('vim.cmd.colorscheme %s', config.scheme),
+            string.format('vim.cmd("colorscheme %s")', config.scheme),
             string.format('vim.o.background = "%s"', config.background),
         }
         local content = table.concat(content_table, '\n') .. '\n'
